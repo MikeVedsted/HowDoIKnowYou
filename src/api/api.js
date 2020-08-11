@@ -2,7 +2,7 @@ export const apiCall = (link) =>
 	fetch(link, {
 		method: 'GET',
  		headers: {
-  			'X-API-KEY': process.env.REACT_APP_FACES_KEY,
+  			'X-API-KEY': REACT_APP_FACES_KEY,
  			'Accept': 'application/json',
   			'Cache-Control': 'no-cache'
  		}
