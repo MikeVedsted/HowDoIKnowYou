@@ -1,0 +1,38 @@
+.container {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	margin: auto;
+	animation-name: rotate;
+	animation-duration: 4s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+.ball {
+	width: 20px;
+	height: 20px;
+	background-color: #001B44;
+	border-radius: 50%;
+	position: relative;
+	margin: auto;
+	animation-name: color;
+	animation-duration: 4s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+	 from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes color {
+	0% {background-color: #001B44;}
+	25% {background-color: #137752;}
+	50% {background-color: #001B44;}
+	75% {background-color: #137752;}
+}

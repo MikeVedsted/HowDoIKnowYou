@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setSearchField, requestUsers } from '../actions';
 import CardList from '../components/Cardlist'; 
 import SearchBox from '../components/SearchBox';  
+import Loader from '../components/Loader';  
 import ErrorBoundry from '../components/ErrorBoundry';
 
 import './App.css';
@@ -31,15 +32,16 @@ class App extends Component {
   render() {
     const { users, searchField, onSearchChange, isPending } = this.props;
     const filteredUsers  = users.filter(user => {
-      return user.name.toLowerCase().includes(searchField.toLowerCase());
+      return user.name.toLowerCase().includes(searchField.toLowerCase()) || user.position.toLowerCase().includes(searchField.toLowerCase()) | user.email.toLowerCase().includes(searchField.toLowerCase()) ;
     })
     return isPending  ?
-      <h1 className="tc">Loading</h1> : 
+      <Loader/> : 
       (
       <div className="tc">
-       <header className="bg-white-20 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+       <header className="bg-navy fixed w-100 pv3 pv4-ns">
         <nav className="f6 fw6">
-          <h1 className="f1">Find your colleague!</h1>
+          <h1 className="f1 mv2">Look up colleagues</h1>
+          <p className="dark-green">Search by name, position or email</p>
           < SearchBox searchChange={onSearchChange}/>
         </nav>
       </header>    
