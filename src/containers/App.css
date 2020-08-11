@@ -1,12 +1,16 @@
-@font-face {
-  font-family: 'SEGA LOGO FONT';
-  font-style: normal;
-  font-weight: normal;
-  src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
-}
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Open+Sans&display=swap');
 
+* {
+	font-family: 'Open Sans', sans-serif;
+} 
 h1 {
-  font-family: 'SEGA LOGO FONT';
-  font-weight: 200;
+  font-family: 'Antic Slab', serif;
+  font-size: 500%;
   color: #0ccac4;
 }
+
+header {
+	z-index: 100;
+}
+
+

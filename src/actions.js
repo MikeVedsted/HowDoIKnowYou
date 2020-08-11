@@ -13,8 +13,8 @@ export const setSearchField = (text) => ({
 
 export const requestUsers = () => (dispatch) => {
   dispatch({ type: REQUEST_USERS_PENDING })
-  // apiCall('https://randomuser.me/api/?results=50&seed=vedsted&inc=name,location,email,cell,id,picture&noinfo&format=pretty')
-  apiCall('https://jsonplaceholder.typicode.com/users')
+  apiCall('https://uifaces.co/api?limit=30')
+  //apiCall('https://jsonplaceholder.typicode.com/users')
     .then(data => dispatch({ type: REQUEST_USERS_SUCCESS, payload: data }))
     .catch(error => dispatch({ type: REQUEST_USERS_FAILED, payload: error }))
 }

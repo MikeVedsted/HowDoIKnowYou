@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { setSearchField, requestUsers } from '../actions';
 import CardList from '../components/Cardlist'; 
 import SearchBox from '../components/SearchBox';  
-import Scroll from '../components/Scroll';
 import ErrorBoundry from '../components/ErrorBoundry';
 
 import './App.css';
@@ -38,13 +37,15 @@ class App extends Component {
       <h1 className="tc">Loading</h1> : 
       (
       <div className="tc">
-        <h1 className="f1">MyFriends</h1>
-        < SearchBox searchChange={onSearchChange}/>
-        <Scroll>
+       <header className="fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+        <nav className="f6 fw6">
+          <h1 className="f1">Find your colleague!</h1>
+          < SearchBox searchChange={onSearchChange}/>
+        </nav>
+      </header>    
           <ErrorBoundry>
             < CardList users={filteredUsers} />
           </ErrorBoundry>
-        </Scroll>
       </div>
       );
   }
