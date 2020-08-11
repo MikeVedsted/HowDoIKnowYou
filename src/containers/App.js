@@ -37,7 +37,7 @@ class App extends Component {
       <h1 className="tc">Loading</h1> : 
       (
       <div className="tc">
-       <header className="fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+       <header className="bg-white-20 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
         <nav className="f6 fw6">
           <h1 className="f1">Find your colleague!</h1>
           < SearchBox searchChange={onSearchChange}/>
@@ -51,4 +51,4 @@ class App extends Component {
   }
 }
 
- export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
